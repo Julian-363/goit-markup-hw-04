@@ -209,7 +209,16 @@ a.nav.active.underlined::after {
 }
 
 button.service-request {
-  padding: 16px 32px;
+  font-family: roboto;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--color-blanco);
+  background: var(--color-azul);
 }
 
 .service-request {
@@ -229,6 +238,42 @@ button.service-request:hover {
   color: var(--color-blanco);
 }
 
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition-property: all;
+}
+
+.modal {
+  position: relative;
+  width: 528px;
+  height: 581px;
+  left: 536px;
+  top: 221px;
+  background: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.backdrop.is-hidden {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  opacity: 1;
+  visibility: visible;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transition: opacity 205ms cubic-bezier(0.4 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4 0, 0.2, 1);
+}
+
 /* previous requirements */
 
 .details-description {
@@ -237,7 +282,7 @@ button.service-request:hover {
   left: 206px;
   top: 945px;
   line-height: 1.7;
-  color: var(--color-gris);
+  color: (--color-gris);
 }
 
 .sub-title {
@@ -333,7 +378,7 @@ li.teachers:hover {
 
 .redes:hover {
   color: var(--color-blanco);
-  fill: #2196f3;
+  fill: var(--color-azul);
 }
 
 .redes {
@@ -384,7 +429,7 @@ li.teachers:hover {
 
 /* Filtro de la pagina */
 
-button {
+li button {
   font-family: roboto;
   font-weight: 500;
   font-size: 16px;
@@ -405,12 +450,12 @@ button {
   gap: 10px;
 }
 
-button:focus {
+li button:focus {
   background: var(--color-azul);
   color: var(--color-blanco);
 }
 
-button:hover {
+li button:hover {
   transition: background-color 0.5s;
   color: var(--color-blanco);
   background: var(--color-azul);
@@ -440,11 +485,39 @@ button:hover {
 }
 
 .project-cards {
+  position: relative;
+  overflow: hidden;
   width: 370px;
   height: 404px;
   left: 15px;
   border: 1px solid var(--color-gris-header);
   cursor: pointer;
+}
+
+.card-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-cards:hover .cards-emergent {
+  transform: translateY(0%);
+}
+
+.cards-emergent {
+  position: absolute;
+  top: 0;
+  width: 370px;
+  height: 294px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  background: rgba(33, 150, 243, 0.9);
+  letter-spacing: 0.03em;
+  color: var(--color-blanco);
+  padding: 63px 24px;
+  transform: translateY(103%);
+  transition: transform 250ms ease;
+  transition-timing-function: cubic-bazier(0.4, 0, 0.2, 1);
 }
 
 .name-cards {

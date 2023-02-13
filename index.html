@@ -60,9 +60,18 @@
           SOLUCIONES EFICACES PARA <br />
           SU NEGOCIO
         </h1>
-        <button type="button" class="service-request">
+        <button type="button" data-modal-open class="service-request">
           Solicite nuestro servicios
         </button>
+        <div class="backdrop is-hidden" data-modal>
+          <div class="modal">
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore,
+              assumenda?
+            </p>
+            <button type="button" data-modal-close>cerrar modal</button>
+          </div>
+        </div>
       </section>
       <!-- previous requirements -->
       <section class="container">
@@ -134,17 +143,15 @@
       <section class="container">
         <h2 class="sub-title">A qué nos dedicamos</h2>
         <ul class="content-sub-title">
-          <div class="prueba">
-            <li class="first-images">
-              <img
-                src="images/keyboard.jpg"
-                alt="imagen de teclado"
-                width="373"
-                height="323"
-              />
-              <div class="footer-de-images">APLICXACIONES DE ESCRITORIO</div>
-            </li>
-          </div>
+          <li class="first-images">
+            <img
+              src="images/keyboard.jpg"
+              alt="imagen de teclado"
+              width="373"
+              height="323"
+            />
+            <div class="footer-de-images">APLICXACIONES DE ESCRITORIO</div>
+          </li>
           <li class="first-images">
             <img
               src="images/phone.jpg"
@@ -477,5 +484,6 @@
         </address>
       </div>
     </footer>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
